@@ -273,6 +273,11 @@
 				<artifactId>jboss-as-maven-plugin</artifactId>
 				<version>${version.jboss.maven.plugin}</version>
 			</plugin>
+			<plugin>
+				<groupid>org.apache.maven.plugins</groupid>
+				<artifactid>maven-resources-plugin</artifactid>
+				<version>2.6</version>
+			</plugin>
 		</plugins>
 	</build>
 </project>
