@@ -25,7 +25,13 @@
 		<maven.compiler.target>1.7</maven.compiler.target>
 		<maven.compiler.source>1.7</maven.compiler.source>
 	</properties>
-
+	
+	<repositories>
+	    <repository>
+	      <id>maven-central</id>
+	      <url>http://nexus-jx.infra.cultura.gov.br/repository/maven-central/</url>
+	    </repository>
+	  </repositories>
 
 	<dependencyManagement>
 		<dependencies>
