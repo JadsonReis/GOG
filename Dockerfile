@@ -81,8 +81,8 @@ COPY arquivos/bancoDados/ScriptCargaComplementar.sql /opt/
 
 RUN chmod +xwr /opt/*.sh
 
-VOLUME /root/.m2
-VOLUME /opt
+#VOLUME /root/.m2
+#VOLUME /opt
 
 
 RUN echo "GOG - Passo 10 - Disponibiliza o comando de execução"
