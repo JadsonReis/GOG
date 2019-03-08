@@ -41,3 +41,4 @@ spec:
             value: gog
           - name: DBSCHEMA
             value: ouvidoria
+      serviceAccountName: useroot
