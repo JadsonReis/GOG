@@ -18,12 +18,4 @@ service:
   internalPort: 8080
 resources:
   limits:
-    cpu: 100m
-    memory: 128Mi
-  requests:
-    cpu: 100m
-    memory: 128Mi
-persistence:
-  accessModes:
-    - ReadWriteOnce
-  size: 8Gi
+    cpu: '2'
