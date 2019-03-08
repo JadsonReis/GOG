@@ -25,3 +25,16 @@ spec:
       - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         name: {{ .Chart.Name }}
+      - env:
+        - name: JBOSS_PASS
+          value: jboss
+        - name: HOSTNAMELINK
+          value: 10.1.20.73
+        - name: DBNAME
+          value: GOG
+        - name: DBUSERNAME
+          value: gog
+        - name: DBPASSWORD
+          value: gog
+        - name: DBSCHEMA
+          value: ouvidoria
