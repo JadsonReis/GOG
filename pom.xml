@@ -26,13 +26,6 @@
 		<maven.compiler.source>1.7</maven.compiler.source>
 	</properties>
 	
-	<repositories>
-	    <repository>
-	      <id>maven-central</id>
-	      <url>http://nexus-jx.infra.cultura.gov.br/repository/maven-central/</url>
-	    </repository>
-	  </repositories>
-
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -211,6 +204,10 @@
 	</dependencies>
 
 	<repositories>
+		 <repository>
+		      <id>maven-central</id>
+		      <url>http://nexus-jx.infra.cultura.gov.br/repository/maven-central/</url>
+		    </repository>
 		<repository>
 			<id>JBoss repository</id>
 			<url>http://repository.jboss.org/nexus/content/groups/public-jboss</url>
