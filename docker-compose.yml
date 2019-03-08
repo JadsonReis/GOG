@@ -1,0 +1,15 @@
+version: '2'
+services:
+  web:
+    build: .
+    ports:
+     - 8080:8080
+     - 9990:9990
+    environment:
+     - JBOSS_PASS=jboss
+     - HOSTNAMELINK=localhost
+     - DBNAME=GOG
+     - DBUSERNAME=gog
+     - DBPASSWORD=gog
+     - DBSCHEMA=ouvidoria
+
