@@ -25,6 +25,9 @@ spec:
       - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         name: {{ .Chart.Name }}
+        ports:
+          - containerPort: 8080
+            protocol: "TCP"
         env:
           - name: JBOSS_PASS
             value: jboss
