@@ -52,8 +52,8 @@ RUN cat /opt/GOG/GOG/src/main/resources/META-INF/persistence.xml
 # Monta a Build do sistema "GOG.war"
 RUN echo "GOG - Passo 08 - Monta a build do GOG utilizando o Maven"
 WORKDIR /opt/GOG/GOG
-RUN mvn package --quiet -Dhttps.protocols=TLSv1.2
-
+#RUN mvn package --quiet -Dhttps.protocols=TLSv1.2
+RUN mvn package -Dhttps.protocols=TLSv1.2
 
 RUN echo "GOG - Passo 09 - Prepara o ambiente para execução da aplicação"
 
