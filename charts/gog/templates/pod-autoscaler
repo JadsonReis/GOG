@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ template "fullname" . }} 
+spec:
+  scaleRef:
+    kind: DeploymentConfig 
+    name: {{ template "fullname" . }} 
+    apiVersion: v1 
+    subresource: scale
+  minReplicas: 1 
+  maxReplicas: 3 
+  cpuUtilization:
+    targetPercentage: 70 
