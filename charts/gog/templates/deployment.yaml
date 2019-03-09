@@ -33,15 +33,33 @@ spec:
             protocol: "TCP"
         env:
           - name: JBOSS_PASS
-            value: jboss
+            valueFrom:
+              secretKeyRef:
+                name: gog-config
+                key: JBOSS_PASS
           - name: HOSTNAMELINK
-            value: 10.1.20.73
+            valueFrom:
+              secretKeyRef:
+                name: gog-config
+                key: HOSTNAMELINK
           - name: DBNAME
-            value: GOG
+            valueFrom:
+              secretKeyRef:
+                name: gog-config
+                key: DBNAME
           - name: DBUSERNAME
-            value: gog
+            valueFrom:
+              secretKeyRef:
+                name: gog-config
+                key: DBUSERNAME
           - name: DBPASSWORD
-            value: gog
+            valueFrom:
+              secretKeyRef:
+                name: gog-config
+                key: DBPASSWORD
           - name: DBSCHEMA
-            value: ouvidoria
+            valueFrom:
+              secretKeyRef:
+                name: gog-config
+                key: DBSCHEMA
       serviceAccountName: useroot
