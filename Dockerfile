@@ -23,7 +23,7 @@ RUN apt-get update && \
 ENV MAVEN_HOME /usr/share/maven
 
 #RUN ls /usr/share/maven 
-COPY arquivos/settings.xml /usr/share/maven/conf
+COPY arquivos/settings.xml ~/.m2/
 # Instalação do git commands
 # RUN echo "GOG - Passo 04 - Instalando o Git"
 # RUN apt-get -y install git
@@ -52,7 +52,8 @@ COPY . .
 # Monta a Build do sistema "GOG.war"
 RUN echo "GOG - Passo 08 - Monta a build do GOG utilizando o Maven"
 WORKDIR /opt/GOG/GOG
-RUN mvn package --quiet -Dhttps.protocols=TLSv1.2
+# RUN mvn package --quiet -Dhttps.protocols=TLSv1.2
+RUN mvn package -Dhttps.protocols=TLSv1.2
 
 RUN echo "GOG - Passo 09 - Prepara o ambiente para execução da aplicação"
 
