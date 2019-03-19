@@ -207,9 +207,9 @@
 	<repositories>
 		
 		<repository>
-		    <id>prime-repo</id>
-		    <name>PrimeFaces Maven Repository</name>
-		    <url>http://repository.primefaces.org</url>
+		    <id>minc-primefaces-repo</id>
+		    <name>minc-primefaces-repo</name>
+		    <url>http://nexus-jx.infra.cultura.gov.br/repository/minc-primefaces-repo</url>
 		    <layout>default</layout>
 		</repository>
 
