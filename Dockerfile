@@ -25,8 +25,8 @@ ENV MAVEN_HOME /usr/share/maven
 #RUN ls /usr/share/maven 
 #COPY settings.xml /usr/share/maven/conf
 # Instalação do git commands
-RUN echo "GOG - Passo 04 - Instalando o Git"
-RUN apt-get -y install git
+# RUN echo "GOG - Passo 04 - Instalando o Git"
+# RUN apt-get -y install git
 
 # Instalação do Jboss
 RUN echo "GOG - Passo 05 - Instalando o Jboss"
@@ -45,9 +45,9 @@ COPY . .
 #RUN git clone https://github.com/JadsonReis/GOG.git
 
 # Configura a aplicação para criar o modelo de dados quando executar a primeira vez.
-RUN echo "GOG - Passo 07 - Configurando o Jboss para executar na primeira vez"
-RUN sed -i -r 's/<!-- <property name=\"hibernate.hbm2ddl.auto\" value=\"update\" \/>  -->/<property name=\"hibernate.hbm2ddl.auto\" value=\"update\" \/>/' /opt/GOG/GOG/src/main/resources/META-INF/persistence.xml 
-RUN cat /opt/GOG/GOG/src/main/resources/META-INF/persistence.xml
+# RUN echo "GOG - Passo 07 - Configurando o Jboss para executar na primeira vez"
+# RUN sed -i -r 's/<!-- <property name=\"hibernate.hbm2ddl.auto\" value=\"update\" \/>  -->/<property name=\"hibernate.hbm2ddl.auto\" value=\"update\" \/>/' /opt/GOG/GOG/src/main/resources/META-INF/persistence.xml 
+# RUN cat /opt/GOG/GOG/src/main/resources/META-INF/persistence.xml
 
 # Monta a Build do sistema "GOG.war"
 RUN echo "GOG - Passo 08 - Monta a build do GOG utilizando o Maven"
@@ -57,12 +57,12 @@ RUN mvn package --quiet -Dhttps.protocols=TLSv1.2
 RUN echo "GOG - Passo 09 - Prepara o ambiente para execução da aplicação"
 
 # Instala  -client, visando executar comandos SQL no banco de dados
-RUN apt-get install -qy postgresql-client
+# RUN apt-get install -qy postgresql-client
 # Prepara as portas do servidor de aplicação
 EXPOSE 8080 8443 9990
 
 # Instala o vim, para posibilitar edição de texto no modo interativo
-RUN apt-get install -y -q vim
+# RUN apt-get install -y -q vim
 
 # Preparação do ambiente para o Jboss
 WORKDIR /opt
@@ -74,9 +74,9 @@ ADD arquivos/run.sh /opt/run.sh
 ADD arquivos/set_jboss_admin_pass.sh /opt/set_jboss_admin_pass.sh
 
 # Prepara ambiente para a carga de dados
-RUN echo "... Inclui os arquivos para execução da carga de dados"
-COPY arquivos/carregaDados.sh /opt/
-COPY arquivos/bancoDados/ScriptCargaComplementar.sql /opt/
+# RUN echo "... Inclui os arquivos para execução da carga de dados"
+# COPY arquivos/carregaDados.sh /opt/
+# COPY arquivos/bancoDados/ScriptCargaComplementar.sql /opt/
 
 RUN chmod +xwr /opt/*.sh
 
