@@ -23,7 +23,7 @@ RUN apt-get update && \
 ENV MAVEN_HOME /usr/share/maven
 
 #RUN ls /usr/share/maven 
-COPY arquivos/settings.xml ~/.m2/
+COPY arquivos/settings.xml /usr/share/maven/conf/settings.xml
 # Instalação do git commands
 # RUN echo "GOG - Passo 04 - Instalando o Git"
 # RUN apt-get -y install git
