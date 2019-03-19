@@ -10,6 +10,11 @@
       <username>admin</username>
       <password>ANMD0JqdE5uOCW^m4o%8</password>
     </server>
+    <server>
+      <id>minc-primefaces-repo</id>
+      <username>admin</username>
+      <password>ANMD0JqdE5uOCW^m4o%8</password>
+    </server>
   </servers>
 
   <mirrors>
@@ -19,10 +24,10 @@
       <url>http://nexus-jx.infra.cultura.gov.br/repository/minc-maven-repo</url>
       <mirrorOf>*</mirrorOf>
     </mirror>
-     <mirror>
-      <id>prime-repo</id>
-      <mirrorOf>prime-repo</mirrorOf>
-      <url>http://repository.primefaces.org</url>
+    <mirror>
+      <id>minc-primefaces-repo</id>
+      <mirrorOf>minc-primefaces-repo</mirrorOf>
+      <url>http://nexus-jx.infra.cultura.gov.br/repository/minc-primefaces-repo</url>
     </mirror>
   </mirrors>
 
