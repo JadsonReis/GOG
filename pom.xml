@@ -13,7 +13,7 @@
 		<!-- JBoss dependency versions -->
 		<version.jboss.maven.plugin>7.4.Final</version.jboss.maven.plugin>
 
-		<!-- Define the version of the JBoss BOMs we want to import to specify 
+		<!-- Define the version of the JBoss BOMs we want to import to specify
 			tested stacks. -->
 		<version.jboss.bom>1.0.7.Final</version.jboss.bom>
 
@@ -25,7 +25,8 @@
 		<maven.compiler.target>1.7</maven.compiler.target>
 		<maven.compiler.source>1.7</maven.compiler.source>
 	</properties>
-	
+
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -46,7 +47,7 @@
 	</dependencyManagement>
 
 	<dependencies>
-		<!-- Import the CDI API, we use provided scope as the API is included in 
+		<!-- Import the CDI API, we use provided scope as the API is included in
 			JBoss AS 7 -->
 		<dependency>
 			<groupId>javax.enterprise</groupId>
@@ -54,7 +55,7 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- Import the Common Annotations API (JSR-250), we use provided scope 
+		<!-- Import the Common Annotations API (JSR-250), we use provided scope
 			as the API is included in JBoss AS 7 -->
 		<dependency>
 			<groupId>org.jboss.spec.javax.annotation</groupId>
@@ -62,7 +63,7 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- Import the JPA API, we use provided scope as the API is included in 
+		<!-- Import the JPA API, we use provided scope as the API is included in
 			JBoss AS 7 -->
 		<dependency>
 			<groupId>org.hibernate.javax.persistence</groupId>
@@ -70,15 +71,15 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- Import the EJB API, we use provided scope as the API is included in 
+		<!-- Import the EJB API, we use provided scope as the API is included in
 			JBoss AS 7 -->
 		<dependency>
 			<groupId>org.jboss.spec.javax.ejb</groupId>
 			<artifactId>jboss-ejb-api_3.1_spec</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		
-		<!-- Import the JSF API, we use provided scope as the API is included in 
+
+		<!-- Import the JSF API, we use provided scope as the API is included in
 			JBoss AS 7 -->
 		<dependency>
 			<groupId>org.jboss.spec.javax.faces</groupId>
@@ -103,7 +104,7 @@
 
 		<!-- Now we declare any tools needed -->
 
-		<!-- Annotation processor to generate the JPA 2.0 metamodel classes for 
+		<!-- Annotation processor to generate the JPA 2.0 metamodel classes for
 			typesafe criteria queries -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -111,26 +112,26 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- Annotation processor that raising compilation errors whenever constraint 
+		<!-- Annotation processor that raising compilation errors whenever constraint
 			annotations are incorrectly used. -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator-annotation-processor</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.jboss.spec.javax.servlet</groupId>
 			<artifactId>jboss-servlet-api_3.0_spec</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>jboss</groupId>
 			<artifactId>jbosssx</artifactId>
@@ -171,11 +172,6 @@
 			<version>1.2.1</version>
 		</dependency>
 		<dependency>
-			<groupId>org.primefaces</groupId>
-			<artifactId>primefaces</artifactId>
-			<version>3.4</version>
-		</dependency>
-		<dependency>
 			<groupId>org.jsoup</groupId>
 			<artifactId>jsoup</artifactId>
 			<version>1.7.2</version>
@@ -204,36 +200,28 @@
 	</dependencies>
 
 	<repositories>
-		 <repository>
-		      <id>maven-central</id>
-		      <url>http://nexus-jx.infra.cultura.gov.br/repository/maven-central/</url>
-		    </repository>
+
 		<repository>
 			<id>JBoss repository</id>
-			<url>http://repository.jboss.org/nexus/content/groups/public-jboss</url>
+			<url>http://nexus-jx.infra.cultura.gov.br/repository/minc-jboss-repo/</url>
+			<snapshots>
+            <enabled>false</enabled>
+        </snapshots>
 		</repository>
 
 		<repository>
 			<id>jboss-public-repository</id>
-			<url>http://repository.jboss.org/nexus/content/groups/public</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<!-- You can disable snapshot resolution to speed up your builds -->
+			<url>http://nexus-jx.infra.cultura.gov.br/repository/minc-jboss-public-repo/</url>
 			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
+            <enabled>false</enabled>
+        </snapshots>
 		</repository>
-        <repository>
-            <id>prime-repo</id>
-            <name>PrimeFaces Maven Repository</name>
-            <url>http://repository.primefaces.org</url>
-            <layout>default</layout>
-        </repository>
+
 	</repositories>
 
+
 	<build>
-		<!-- Maven will append the version to the finalName (which is the name 
+		<!-- Maven will append the version to the finalName (which is the name
 			given to the generated war, and hence the context root) -->
 		<finalName>${project.artifactId}</finalName>
 		<pluginManagement>
@@ -276,11 +264,6 @@
 				<artifactId>jboss-as-maven-plugin</artifactId>
 				<version>${version.jboss.maven.plugin}</version>
 			</plugin>
-		
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-deploy-plugin</artifactId>
-        <version>2.8.2</version></plugin>
-    </plugins>
+		</plugins>
 	</build>
 </project>
