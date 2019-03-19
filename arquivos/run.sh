@@ -33,15 +33,15 @@ sed -i -r "s/DBSCHEMA/$DBSCHEMA/" /opt/jboss-as-7.1.1.Final/standalone/configura
 echo "Vai esperar o serviço de Banco de Dados ser configurado ..."
 PORT=5432
 export PGPASSWORD=$DBPASSWORD
-while true; do
-   if psql -lqt -h $HOSTNAME -p $PORT -U $DBUSERNAME $DBNAME | cut -d \| -f 1 | grep -qw $DBNAME; then
-       echo "...Banco de Dados pronto"
-       break
-   else
-       echo "...O BD ainda não foi configurado"
-       sleep 5
-   fi
-done
+# while true; do
+#    if psql -lqt -h $HOSTNAME -p $PORT -U $DBUSERNAME $DBNAME | cut -d \| -f 1 | grep -qw $DBNAME; then
+#        echo "...Banco de Dados pronto"
+#        break
+#    else
+#        echo "...O BD ainda não foi configurado"
+#        sleep 5
+#    fi
+# done
 
 
 echo "Vai iniciar o Jboss ..."
@@ -53,8 +53,8 @@ echo "Vai realizar o deploy ..."
 /opt/jboss-as-7.1.1.Final/bin/jboss-cli.sh --connect --command="deploy /opt/GOG/GOG/target/GOG.war --force"
 echo "Jboss iniciado com o depĺoy realizado"
 
-echo "...Agora vamos carregar os dados do sistema..."
-sh /opt/carregaDados.sh 
+# echo "...Agora vamos carregar os dados do sistema..."
+# sh /opt/carregaDados.sh 
 
 echo -e "\n\n\nPRONTO! O GOG está funcionando! Use: http://localhost:8080/GOG"
 
