@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd">
+
+
+ <servers>
+    <server>
+      <id>minc-maven-repo</id>
+      <username>admin</username>
+      <password>ANMD0JqdE5uOCW^m4o%8</password>
+    </server>
+  </servers>
+
+  <mirrors>
+    <mirror>
+      <id>minc-maven-repo</id>
+      <name>minc-maven-repo</name>
+      <url>http://nexus-jx.infra.cultura.gov.br/repository/minc-maven-repo</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
+  </mirrors>
+
+</settings>
