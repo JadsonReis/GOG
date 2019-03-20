@@ -58,7 +58,7 @@ RUN mvn package -Dhttps.protocols=TLSv1.2
 RUN echo "GOG - Passo 09 - Prepara o ambiente para execução da aplicação"
 
 # Instala  -client, visando executar comandos SQL no banco de dados
-RUN apt-get install -qy postgresql-client
+#RUN apt-get install -qy postgresql-client
 # Prepara as portas do servidor de aplicação
 EXPOSE 8080 8443 9990
 
@@ -76,8 +76,8 @@ ADD arquivos/set_jboss_admin_pass.sh /opt/set_jboss_admin_pass.sh
 
 # Prepara ambiente para a carga de dados
 # RUN echo "... Inclui os arquivos para execução da carga de dados"
-COPY arquivos/carregaDados.sh /opt/
-COPY arquivos/bancoDados/ScriptCargaComplementar.sql /opt/
+# COPY arquivos/carregaDados.sh /opt/
+# COPY arquivos/bancoDados/ScriptCargaComplementar.sql /opt/
 
 RUN chmod +xwr /opt/*.sh
 
