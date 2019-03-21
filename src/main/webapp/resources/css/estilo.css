@@ -632,8 +632,7 @@ html,body {
 }
 
 .panelLogin {
-	/* background-color: #02712B; */
-	background-color: blue;
+	background-color: #02712B;
 	color: #FFFFFF;
 	height: 176px;
 	margin: 0 auto;
