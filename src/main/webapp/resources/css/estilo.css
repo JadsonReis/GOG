@@ -1,4 +1,4 @@
-/* 
+/*
     Document   : estilo
     Created on : 26/12/2012, 10:18:38
     Author     : michel.martins
@@ -62,7 +62,7 @@ html,body {
 }
 
 .ui-widget-content {
-	
+
 }
 
 .ui-widget {
@@ -632,7 +632,8 @@ html,body {
 }
 
 .panelLogin {
-	background-color: #02712B;
+	/* background-color: #02712B; */
+	background-color: blue;
 	color: #FFFFFF;
 	height: 176px;
 	margin: 0 auto;
@@ -754,7 +755,7 @@ html,body {
 .dadosCadastro1 {
 	height: 35px;
 }
-	
+
 .dadosCadastro1 .ui-button {
 	background-color: white;
 	border-radius: 4px 4px 4px 4px;
@@ -914,7 +915,7 @@ ui-corner-all {
 .btnResponderQuestionario {
 	margin-bottom: 10px;"
 }
-	
+
 .btnResponderQuestionario span {
 	background-color: #00500f;
 	color: #fff;
@@ -956,11 +957,11 @@ ui-corner-all {
 /*
 	Linha das manifestações em atraso coloridas
 */
-.atrasoEncaminhamento td {  
+.atrasoEncaminhamento td {
     background-color: #CFDBB9 !important;
 }
 
-.atrasoRespostaOuvidoria td {  
+.atrasoRespostaOuvidoria td {
     background-color: #ffc1c1 !important;
 }
 
